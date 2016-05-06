@@ -43,11 +43,11 @@ class ServerMonitorController extends Controller
 
     public function checkConnection($detail) {
 
-        exec("ping ".$detail['ip']." -n 1", $output, $return_var);
+        $command = "ping ".$detail['ip']." -c 1";
 
-        $output2 = explode("=", $output[2]); //回覆自 192.168.10.125: 目的地主機無法連線。
+        exec($command, $output, $return_var);
 
-        return is_numeric(end($output2)) ? TRUE: FALSE; 
+        return (strstr($output[4], '1 received') == FALSE ? FALSE: TRUE);
 
     }
 
