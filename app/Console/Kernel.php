@@ -38,8 +38,8 @@ class Kernel extends ConsoleKernel
                 "cctv"             => array("fullname" => "CCTV 閉路電視", "ip" => "192.168.10.31"),
                 "avaya_ms_server"  => array("fullname" => "Avaya MS Window Server 2008", "ip" => "192.168.10.20"),
                 "avaya_app_server" => array("fullname" => "Avaya Application Server", "ip" => "192.168.10.19"),
-                "avaya_ipo"        => array("fullname" => "Avaya IPO Server", "ip" => "192.168.10.18"),
-                "test"             => array("fullname" => "Testing Connection", "ip" => "192.168.10.15")
+                "avaya_ipo"        => array("fullname" => "Avaya IPO Server", "ip" => "192.168.10.18")
+                //"test"             => array("fullname" => "Testing Connection", "ip" => "192.168.10.15")
             );
 
             foreach($server_list AS $server) {
