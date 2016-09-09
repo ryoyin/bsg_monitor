@@ -15,14 +15,10 @@ class ServerMonitorController extends Controller
      */
     public function index()
     {
-        echo "hi1";
-         $server_list = $this->getServerList();
-        echo "hi2";
-
-//        $server_status = $this->getServerStatus();
-//        return view('backend.server_monitor', ["server_status" => $server_status]);
-         return view('backend.server_monitor');
-        echo "hi3";
+        // $server_list = $this->getServerList();
+        $server_status = $this->getServerStatus();
+        return view('backend.server_monitor', ["server_status" => $server_status]);
+        // return view('backend.server_monitor');
     }
 
     public function checkServerStatus($returnJSON = TRUE) {
