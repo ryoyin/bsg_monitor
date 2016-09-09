@@ -23,7 +23,6 @@
 //use App\Classes\Test;
 //use App\Helpers\Helper;
 
-Route::post('/server/checkconnectionbyip', 'ServerMonitorController@checkConnectionByIP');
 
 Route::group(['middleware' => ['web']], function () {
 
@@ -36,7 +35,7 @@ Route::group(['middleware' => ['web']], function () {
         return view('backend.test');
     }));*/
 
-
+    Route::post('/server/checkconnectionbyip', 'ServerMonitorController@checkConnectionByIP');
 });
 
 Route::get('servertest', function() {
