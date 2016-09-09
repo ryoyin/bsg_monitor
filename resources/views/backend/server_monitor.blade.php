@@ -5,6 +5,7 @@
 <script>
 
 $(document).ready(function() {
+  checkAllConnection();
 
   //check all connection
   setInterval(function(){ 
