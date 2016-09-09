@@ -53,7 +53,7 @@ class ServerMonitorController extends Controller
 
     public function checkConnectionByIP(Request $request) {
 
-        exec("ping ".$request->input('ip')." -n 1", $output, $return_var);
+        exec("ping ".$request->input('ip')." -c 1", $output, $return_var);
 
         $output2 = explode("=", $output[2]); //回覆自 192.168.10.125: 目的地主機無法連線。
 
