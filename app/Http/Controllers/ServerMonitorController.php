@@ -55,9 +55,9 @@ class ServerMonitorController extends Controller
 
         exec("ping ".$request->input('ip')." -c 1", $output, $return_var);
 
-        $output2 = explode("=", $output[2]); //回覆自 192.168.10.125: 目的地主機無法連線。
+//        $output2 = explode("=", $output[2]); //回覆自 192.168.10.125: 目的地主機無法連線。
 
-        return is_numeric(end($output2)) ? 1: 0; 
+        return strstr($output[4], '1 received') ? 1: 0;
 
     }
 
