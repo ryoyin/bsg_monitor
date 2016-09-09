@@ -20,15 +20,19 @@
 |
 */
 
-use App\Classes\Test;
-use App\Helpers\Helper;
+//use App\Classes\Test;
+//use App\Helpers\Helper;
+
+Route::get('/', function() {
+    echo '123';
+    return view('index');
+    echo '456';
+});
 
 Route::group(['middleware' => ['web']], function () {
 
     /*Admin Page*/
-    Route::get('/', function() {
-       return view('index');
-    });
+
     Route::get('/server/monitor', 'ServerMonitorController@index')->name('server-monitor');
     Route::get('/server/checkserverstatus', 'ServerMonitorController@checkServerStatus')->name('server-status');
 
