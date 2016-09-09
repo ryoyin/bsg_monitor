@@ -26,6 +26,9 @@ use App\Helpers\Helper;
 Route::group(['middleware' => ['web']], function () {
 
     /*Admin Page*/
+    Route::get('/', function() {
+       return view('index');
+    });
     Route::get('/server/monitor', 'ServerMonitorController@index')->name('server-monitor');
     Route::get('/server/checkserverstatus', 'ServerMonitorController@checkServerStatus')->name('server-status');
 
